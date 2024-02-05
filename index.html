@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>My Second UI</title>
+	<link rel="stylesheet" type="text/css" media="screen" href="Style/style.css">
+	<script src="Script/main.js" defer></script>
+</head>
+
+<body>
+	<div class="main">
+		<div class="circle1"></div>
+		<div class="circle2"></div>
+		<div class="circle3"></div>
+		<input type="text" name="" class="search" placeholder="search...">
+		<img class="search-img" src="Icons/search.svg">
+		<div class="tools">
+			<p class="tool-name">Dashboard</p>
+			<img src="Icons/dashboard.png" class="icon">
+		</div>
+		<div class="tools">
+			<p class="tool-name">Your beats</p>
+			<img src="Icons/folder.png" class="icon">
+		</div>
+		<div class="tools">
+			<p class="tool-name">Explore</p>
+			<img src="Icons/direction.png" class="icon">
+		</div>
+
+		<div class="tools">
+			<p class="tool-name">Inbox</p>
+			<img src="Icons/inbox.png" class="icon">
+		</div>
+		<div class="tools">
+			<p class="tool-name">Artists</p>
+			<img src="Icons/paint-palette.png" class="icon">
+		</div>
+		<div class="tools">
+			<p class="tool-name">Settings</p>
+			<img src="Icons/settings.png" class="icon">
+		</div>
+		<p class="groups">Groups</p>
+		<div class="tools">
+			<p class="tool-name">Daily beats</p>
+			<img src="" class="icon">
+		</div>
+		<div class="tools">
+			<p class="tool-name">Senkai</p>
+			<img src="" class="icon">
+		</div>
+		<div class="tools">
+			<p class="tool-name">Minimal sounds</p>
+			<img src="" class="icon">
+		</div>
+		<img class="main-song-img" src="Assests/FRESHERBRINE.jpeg" id="main-song-img">
+		<div class="main-song-img-before"></div>
+		<p class="song-name" id="song-name">Way Back Home</p>
+		<p class="song-artist">unknown</p>
+		<p class="now-duration" id="now-duration">0:00</p>
+		<input type="range" value="40" min="0" max="100" class="line" id="line">
+		<p class="duration" id="duration">3:54</p>
+		<img src="Icons/fast-backward.svg" class="back">
+		<input type="checkbox" name="" id="play-pause">
+		<audio src="Assests/Way Back Home.mp3" id="audio"></audio>
+		<img src="Icons/play.svg" class="pause" id="pause">
+		<img src="Icons/fast-forward.svg" class="next">
+	</div>
+
+	<div class="main2">
+		<p class="ft">Feature Tracks</p>
+		<div>
+			<img src="">
+			<p></p>
+			<p></p>
+		</div>
+		<div>
+			<img src="">
+			<p></p>
+			<p></p>
+		</div>
+		<div class="song-lines">
+
+		</div>
+		<div class="main-song-div">
+			<img src="Assests/FRESHERBRINE.jpeg" class="main-song-div-img">
+			<p class="main-song-div-p1" id="main-song-div-p1">Playing</p>
+			<p class="main-song-div-p2" id="main-song-div-p2">Way Back..</p>
+			<div class="round"></div>
+		</div>
+		<p class="fa">Feature Artist</p>
+		<div class="fal1" id="">
+			<img src="Icons/user.svg" id="fal-img">
+			<b>
+				<p id="fal-p">Unknown</p>
+			</b>
+			<p></p>
+		</div>
+		<div class="fal2" id="">
+			<img src="Icons/user.svg" id="fal-img">
+			<b>
+				<p id="fal-p">Unknown</p>
+			</b>
+			<p></p>
+		</div>
+		<div class="fal3" id="">
+			<img src="Icons/user.svg" id="fal-img">
+			<b>
+				<p id="fal-p">Unknown</p>
+			</b>
+			<p></p>
+		</div>
+		<div class="fal4" id="">
+			<img src="Icons/user.svg" id="fal-img">
+			<b>
+				<p id="fal-p">Unknown</p>
+			</b>
+			<p></p>
+		</div>
+		<p class="tsfy">Tracks Selected for You</p>
+		<div class="tsfy-div1" id="tsfy-div1"
+			onclick="document.getElementById('audio').src = 'TheFatRat/TheFatRat & Anjulie - Close To The Sun.mp3'; document.getElementById('audio').play(); document.getElementById('song-name').innerHTML = 'Close To The Sun'; document.getElementById('song-name').style.cssText = 'left: 50px;'; document,getElementById('main-song-div-p2').innerHTML = 'Close To..'; document.getElementById('pause').src = 'pause.svg';">
+			<img src="">
+			<p class="list-song-name">Close To The Sun</p>
+			<p class="list-song-artist">3:50</p>
+		</div>
+		<div class="tsfy-div2" id="tsfy-div2"
+			onclick="document.getElementById('audio').src = 'TheFatRat/TheFatRat - Fly Away feat. Anjulie.mp3'; document.getElementById('audio').play(); document.getElementById('song-name').innerHTML = 'Fly Away'; document.getElementById('song-name').style.cssText = 'left: 70px;'; document,getElementById('main-song-div-p2').innerHTML = 'Fly Away'; document.getElementById('pause').src = 'pause.svg';">
+			<img src="">
+			<p class="list-song-name">Fly Away</p>
+			<p class="list-song-artist">4:02</p>
+		</div>
+		<div class="tsfy-div3" id="tsfy-div3"
+			onclick="document.getElementById('audio').src = 'TheFatRat/TheFatRat - The Calling (feat. Laura Brehm).mp3'; document.getElementById('audio').play(); document.getElementById('song-name').innerHTML = 'The Calling'; document.getElementById('song-name').style.cssText = 'left: 65px;'; document,getElementById('main-song-div-p2').innerHTML = 'The Calling'; document.getElementById('pause').src = 'pause.svg';">
+			<img src="">
+			<p class="list-song-name">The Calling</p>
+			<p class="list-song-artist">4:45</p>
+		</div>
+		<div class="tsfy-div4" id="tsfy-div4"
+			onclick="document.getElementById('audio').src = 'TheFatRat/TheFatRat - Oblivion (feat. Lola Blanc).mp3'; document.getElementById('audio').play(); document.getElementById('song-name').innerHTML = 'Oblivion'; document.getElementById('song-name').style.cssText = 'left: 75px;'; document,getElementById('main-song-div-p2').innerHTML = 'Oblivion'; document.getElementById('pause').src = 'pause.svg';">
+			<img src="">
+			<p class="list-song-name">Oblivion</p>
+			<p class="list-song-artist">3:58</p>
+		</div>
+		<!--
+		<div class="tsfy-div5">
+			<img src="">
+			<p class="list-song-name"></p>
+			<p class="list-song-artist"></p>
+		</div>
+		-->
+		<p class="assfy">Albums & sets selected for you</p>
+		<a href="Anime Songs.html" style="text-decoration: none; color: #000;">
+			<div class="assfyl1">
+				<img src="Assests/449976.jpg" id="assfyl1-img">
+				<p class="albums-song-name" align="center">Anime Songs</p>
+				<p class="albums-song-artist" align="center">unknown</p>
+				<img src="">
+				<p class="albums-img-name"></p>
+				<p class="albums-img-artist"></p>
+			</div>
+		</a>
+		<a href="Demon Slayer.html" style="text-decoration: none; color: #000;">
+			<div class="assfyl2">
+				<img src="Assests/2243124edited.jpg" id="assfyl1-img">
+				<p class="albums-song-name" align="center">Demon Slayer</p>
+				<p class="albums-song-artist" align="center">unknown</p>
+				<img src="">
+				<p class="albums-img-name"></p>
+				<p class="albums-img-artist"></p>
+			</div>
+		</a>
+	</div>
+</body>
+
+</html>

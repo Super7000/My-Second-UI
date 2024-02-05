@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		body
+		{
+			background: url("449903.jpg");
+			min-height: 100vh;
+			min-width: 100vh;
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+		.main
+		{
+			width: 900px;
+			height: 570px;
+			background: rgba(255,255,255,0.7);
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			border-radius: 15px;
+		}
+		.main2
+		{
+			width: 700px;
+			height: 570px;
+			background: #f7fdfe;
+			position: absolute;
+			top: 50%;
+			left: calc(50% + 100px);
+			transform: translate(-50%,-50%);
+			border-top-right-radius: 15px;
+			border-bottom-right-radius: 15px;
+		}
+		.ft,.fa,.tsfy,.assfy
+		{
+			position: absolute;
+			font-family: verdana;
+			font-size: 17px;
+		}
+		.ft,.fa,.tsfy
+		{
+			left: 40px;
+		}
+		.ft
+		{
+			top: 15px;
+		}
+		.circle1,.circle2,.circle3
+		{
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			position: absolute;
+			top: 10px;
+		}
+		.circle1
+		{
+			left: 15px;
+			background: red;
+		}
+		.circle2
+		{
+			left: 30px;
+			background: yellow;
+		}
+		.circle3
+		{
+			left: 47px;
+			background: green;
+		}
+		.search
+		{
+			width: 130px;
+			height: 25px;
+			position: absolute;
+			top: 30px;
+			outline: none;
+			background: dodgerblue;
+			border: none;
+			border-radius: 5px;
+			left: 25px;
+			padding-left: 10px;
+			padding-right: 5px;
+			color: #fff;
+		}
+		.search::placeholder
+		{
+			color: rgba(255,255,255,0.7);
+		}
+		.search-img
+		{
+			width: 15px;
+			height: 15px;
+			position: absolute;
+			left: 175px;
+			top: 35px;
+			opacity: 0.6;
+			cursor: pointer;
+		}
+		.icon
+		{
+			width: 15px;
+			height: 15px;
+			position: absolute;
+			top: 0;
+			transition: 0.3s;
+			left: 30px;
+		}
+		.tools
+		{
+			position: relative;
+			top: 70px;
+			cursor: pointer;
+		}
+		.tool-name
+		{
+			position: relative;
+			left: 60px;
+			font-family: verdana;
+			font-size: 12px;
+			transition: 0.3s;
+		}
+		.tool-name:hover
+		{
+			opacity: 0.8;
+			font-size: 15px;
+		}
+		.tool-name:hover ~ .icon
+		{
+			width: 20px;
+			height: 20px;
+		}
+		.groups
+		{
+			font-size: 14px;
+			font-family: verdana;
+			position: relative;
+			top: 75px;
+			left: 25px;
+		}
+		.main-song-img
+		{
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			border: 4px solid #fff;
+			position: absolute;
+			bottom: 90px;
+			left: 45px;
+			box-shadow: 0 0 40px rgba(0,0,0,0.3)
+		}
+		.main-song-img-before
+		{
+			content: '';
+			position: absolute;
+			bottom: 136px;
+			left: 91px;
+			width: 15px;
+			height: 15px;
+			background: #fff;
+			border-radius: 50%;
+		}
+		.line
+		{
+			height: 7px;
+			width: 90px;
+			position: absolute;
+			bottom: 50px;
+			left: 55px;
+		}
+		.now-duration,.duration
+		{
+			font-size: 10px;
+			font-family: verdana;
+			position: absolute;
+			bottom: 38px;
+		}
+		.now-duration
+		{
+			left: 29px;
+		}
+		.duration
+		{
+			left: 150px;
+		}
+		.song-name
+		{
+			position: absolute;
+			bottom: 60px;
+			font-family: verdana;
+			font-size: 12px;
+			left: 50px;
+		}
+		.song-artist
+		{
+			position: absolute;
+			font-family: verdana;
+			font-size: 10px;
+			left: 75px;
+			bottom: 50px;
+		}
+		/*---Another Day-----*/
+		.assfy
+		{
+			left: 50%;
+			top: 50%;
+
+		}
+		.tsfy
+		{
+			top: 50%;
+		}
+		.fa
+		{
+			top: 27%;
+		}
+		.back
+		{
+			left: 62px;
+		}
+		.pause
+		{
+			left: 92px;
+		}
+		.next
+		{
+			left: 122px;	
+		}
+		.back,.pause,.next
+		{
+			height: 13px;
+			bottom: 20px;
+			position: absolute;
+		}
+		.fal1,.fal2,.fal3,.fal4
+		{
+			position: absolute;
+			width: 140px;
+			height: 60px;
+			box-shadow: 0 0 15px rgba(0,0,0,0.1);
+			border-radius: 10px;
+			top: 36%;
+			cursor: pointer;
+			transition: 0.3s;
+		}
+		.fal1
+		{
+			left: 45px;
+		}
+		.fal1:hover
+		{
+			width: 150px;
+			height: 65px;
+			box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+			left: 40px;
+			top: calc(36% - 5px);
+		}
+		.fal2
+		{
+			left: 200px;
+		}
+		.fal2:hover
+		{
+			width: 150px;
+			height: 65px;
+			box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+			left: 195px;
+			top: calc(36% - 5px);
+		}
+		.fal3
+		{
+			left: 355px;
+		}
+		.fal3:hover
+		{
+			width: 150px;
+			height: 65px;
+			box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+			left: 350px;
+			top: calc(36% - 5px);
+		}
+		.fal4
+		{
+			left: 510px;
+		}
+		.fal4:hover
+		{
+			width: 150px;
+			height: 65px;
+			box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+			left: 505px;
+			top: calc(36% - 5px);
+		}
+		/*-----Another Day-----*/
+		.assfyl1,.assfyl2
+		{
+			position: absolute;
+			height: 160px;
+			width: 140px;
+			border-radius: 20px;
+			box-shadow: 0 0 15px rgba(0,0,0,0.1);
+			cursor: pointer;
+			transition: 0.3s;
+		}
+		.assfyl1
+		{
+			right: 210px;
+			bottom: 70px;
+		}
+		.assfyl1:hover
+		{
+			width: 150px;
+			height: 170px;
+			box-shadow: 5px 0 15px rgba(0,0,0,0.2)
+		}
+		.assfyl2
+		{
+			right: 50px;
+			bottom: 70px;
+		}
+		.assfyl2:hover
+		{
+			width: 150px;
+			height: 170px;
+			box-shadow: 5px 0 15px rgba(0,0,0,0.2)
+		}
+		.main-song-div
+		{
+			width: 170px;
+			height: 50px;
+			border-radius: 25px;
+			position: absolute;
+			right: 50px;
+			top: 100px;
+			box-shadow: 0 0 15px rgba(0,0,0,0.1);
+			cursor: pointer;
+		}
+		.main-song-div-img
+		{
+			width: 35px;
+			height: 35px;
+			border-radius: 50%;
+			border: 3px solid #fff;
+			box-shadow: 0 0 5px rgba(0,0,0,0.1);
+			position: relative;
+			left: 7px;
+			top: 50%;
+			transform: translate(0%,-50%);
+		}
+		.main-song-div-p1,.main-song-div-p2
+		{
+			font-size: 11px;
+			font-family: verdana;
+			position: relative;
+			top: -45px;
+			left: 55px;
+		}
+		.main-song-div-p2
+		{
+			top: -55px;
+		}
+		.tsfy-div1,.tsfy-div2,.tsfy-div3,.tsfy-div4,.tsfy-div5
+		{
+			width: 270px;
+			height: 40px;
+			left: 40px;
+			border-radius: 5px;
+			box-shadow: 0 0 15px rgba(0,0,0,0.1);
+			cursor: pointer;
+			transition: 0.3s;
+			background: #fff;
+			opacity: 0.8;
+		}
+		.tsfy-div1
+		{
+			position: absolute;
+			bottom: 185px;
+		}
+		.tsfy-div1:hover
+		{
+			width: 280px;
+			height: 45px;
+			z-index: 2;
+			left: 35px;
+			box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.2);
+		}
+		.tsfy-div2
+		{
+			position: absolute;
+			bottom: 140px;
+		}
+		.tsfy-div2:hover
+		{
+			width: 280px;
+			height: 45px;
+			z-index: 2;
+			left: 35px;
+			box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.2);
+		}
+		.tsfy-div3
+		{
+			position: absolute;
+			bottom: 95px;
+		}
+		.tsfy-div3:hover
+		{
+			width: 280px;
+			height: 45px;
+			z-index: 2;
+			left: 35px;
+			box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.2);
+		}
+		.tsfy-div4
+		{
+			position: absolute;
+			bottom: 50px;
+		}
+		.tsfy-div4:hover
+		{
+			width: 280px;
+			height: 45px;
+			z-index: 2;
+			left: 35px;
+			box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.2);
+		}
+		#play-pause
+		{
+			height: 13px;
+			width: 13px;
+			position: absolute;
+			bottom: 17px;
+			left: 87px;
+			z-index: 2;
+			-webkit-appearance: none;
+			outline: none;
+			cursor: pointer;
+		}
+		.list-song-name
+		{
+			font-size: 12px;
+			font-family: verdana;
+			position: relative;
+			top: -18px;
+			left: 30px;
+		}
+		.list-song-artist
+		{
+			font-size: 12px;
+			font-family: verdana;
+			position: relative;
+			top: -45px;
+			left: 180px;
+		}
+		#assfyl1-img
+		{
+			width: 80px;
+			height: 80px;
+			border: 4px solid #fff;
+			box-shadow: 0 0 15px rgba(0,0,0,0.1);
+			position: relative;
+			top: 38%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			border-radius: 50%;
+		}
+		.albums-song-name,.albums-song-artist
+		{
+			font-size: 12px;
+			font-family: verdana;
+			position: relative
+		}
+		.albums-song-artist
+		{			
+			top: -5px;
+		}
+		.albums-song-name
+		{
+			top: 7px;
+		}
+		#fal-img
+		{
+			width: 40px;
+			box-shadow: 0 0 15px rgba(0,0,0,0.1);
+			border-radius: 10px;
+			position: absolute;
+			top: 50%;
+			left: 15px;
+			transform: translate(0,-50%);
+		}
+		#fal-p
+		{
+			position: absolute;
+			left: 65px;
+			font-size: 15px;
+			font-family: verdana;
+		}
+	</style>
+	<script type="text/javascript">
+		function progress() {
+			var a = document.getElementById('audio');
+			var b = a.currentTime;
+			var d = a.duration;
+			var e = document.getElementById('line');
+			e.max = d;
+			e.value = b;
+			var f = document.getElementById('play-pause');
+			var g = document.getElementById('audio');
+			var h = document.getElementById('pause');
+			var i = document.getElementById('now-duration');
+			var j = document.getElementById('duration');
+			i.innerHTML = b.toFixed(0);
+			j.innerHTML = d.toFixed(0);
+			if (b == d) {
+				f.checkbox = true;
+				play_pause();
+			} else {}
+		}
+		var i = setInterval(progress,100);
+		function play_pause() {
+			var a = document.getElementById('play-pause');
+			var b = document.getElementById('audio');
+			var c = document.getElementById('pause');
+			if (a.checked == true) {
+				b.play();
+				c.src = "pause.svg";
+			} else {
+				b.pause();
+				c.src = "play.svg";
+			}
+		};
+	</script>
+</head>
+<body>
+	<div class="main">
+		<div class="circle1"></div>
+		<div class="circle2"></div>
+		<div class="circle3"></div>
+		<input type="text" name="" class="search" placeholder="search...">
+		<img class="search-img" src="search.svg">
+		<div class="tools">
+			<p class="tool-name">Dashboard</p>
+			<img src="dashboard.png" class="icon">
+		</div>
+		<div class="tools">
+			<p class="tool-name">Your beats</p>
+			<img src="folder.png" class="icon">
+		</div>
+		<div class="tools">
+			<p class="tool-name">Explore</p>
+			<img src="direction.png" class="icon">
+		</div>
+
+		<div class="tools">
+			<p class="tool-name">Inbox</p>
+			<img src="inbox.png" class="icon">
+		</div>
+		<div class="tools">
+			<p class="tool-name">Artists</p>
+			<img src="paint-palette.png" class="icon">
+		</div>
+		<div class="tools">
+			<p class="tool-name">Settings</p>
+			<img src="settings.png" class="icon">
+		</div>
+		<p class="groups">Groups</p>
+		<div class="tools">
+			<p class="tool-name">Daily beats</p>
+			<img src="" class="icon">
+		</div>
+		<div class="tools">
+			<p class="tool-name">Senkai</p>
+			<img src="" class="icon">
+		</div>
+		<div class="tools">
+			<p class="tool-name">Minimal sounds</p>
+			<img src="" class="icon">
+		</div>
+		<img class="main-song-img" src="FRESHERBRINE.jpeg" id="main-song-img">
+		<div class="main-song-img-before"></div>
+		<p class="song-name" id="song-name">Way Back Home</p>
+		<p class="song-artist">unknown</p>
+		<p class="now-duration" id="now-duration">0:00</p>
+		<input type="range" value="40" min="0" max="100" class="line" id="line">
+		<p class="duration" id="duration">3:54</p>
+		<img src="fast-backward.svg" class="back">
+		<input type="checkbox" name="" id="play-pause" onclick="play_pause()">
+		<audio src="Way Back Home.mp3" id="audio"></audio>
+		<img src="play.svg" class="pause" id="pause">
+		<img src="fast-forward.svg" class="next">
+	</div>
+
+	<div class="main2">
+		<p class="ft">Feature Tracks</p>
+		<div>
+			<img src="">
+			<p></p>
+			<p></p>
+		</div>
+		<div>
+			<img src="">
+			<p></p>
+			<p></p>
+		</div>
+		<div class="song-lines">
+			
+		</div>
+		<div class="main-song-div">
+			<img src="FRESHERBRINE.jpeg" class="main-song-div-img">
+			<p class="main-song-div-p1" id="main-song-div-p1">Playing</p>
+			<p class="main-song-div-p2" id="main-song-div-p2">Way Back..</p>
+			<div class="round"></div>
+		</div>
+		<p class="fa">Feature Artist</p>
+		<div class="fal1" id="">
+			<img src="Hololive Wallpapers\Virtual YouTubeer 1.jpg" id="fal-img">
+			<b><p id="fal-p"></p></b>
+			<p></p>
+		</div>
+		<div class="fal2" id="">
+			<img src="Hololive Wallpapers\Virtual YouTubeer 2.jpg" id="fal-img">
+			<b><p id="fal-p">Gawr Gura</p></b>
+			<p></p>
+		</div>
+		<div class="fal3" id="">
+			<img src="Hololive Wallpapers\Virtual YouTubeer 3.jpg" id="fal-img">
+			<b><p id="fal-p">Kiara</p></b>
+			<p></p>
+		</div>
+		<div class="fal4" id="">
+			<img src="Hololive Wallpapers\Virtual YouTubeer 1-b.jpg" id="fal-img">
+			<b><p id="fal-p">Watson Emilia</p></b>
+			<p></p>
+		</div>
+		<p class="tsfy">Tracks Selected for You</p>
+		<div class="tsfy-div1" id="tsfy-div1" onclick="document.getElementById('audio').src = 'TheFatRat/TheFatRat & Anjulie - Close To The Sun.mp3'; document.getElementById('audio').play(); document.getElementById('song-name').innerHTML = 'Close To The Sun'; document.getElementById('song-name').style.cssText = 'left: 50px;'; document,getElementById('main-song-div-p2').innerHTML = 'Close To..'; document.getElementById('pause').src = 'pause.svg';">
+			<img src="">
+			<p class="list-song-name">Close To The Sun</p>
+			<p class="list-song-artist">3:50</p>
+		</div>
+		<div class="tsfy-div2" id="tsfy-div2" onclick="document.getElementById('audio').src = 'TheFatRat/TheFatRat - Fly Away feat. Anjulie.mp3'; document.getElementById('audio').play(); document.getElementById('song-name').innerHTML = 'Fly Away'; document.getElementById('song-name').style.cssText = 'left: 70px;'; document,getElementById('main-song-div-p2').innerHTML = 'Fly Away'; document.getElementById('pause').src = 'pause.svg';">
+			<img src="">
+			<p class="list-song-name">Fly Away</p>
+			<p class="list-song-artist">4:02</p>
+		</div>
+		<div class="tsfy-div3" id="tsfy-div3" onclick="document.getElementById('audio').src = 'TheFatRat/TheFatRat - The Calling (feat. Laura Brehm).mp3'; document.getElementById('audio').play(); document.getElementById('song-name').innerHTML = 'The Calling'; document.getElementById('song-name').style.cssText = 'left: 65px;'; document,getElementById('main-song-div-p2').innerHTML = 'The Calling'; document.getElementById('pause').src = 'pause.svg';">
+			<img src="">
+			<p class="list-song-name">The Calling</p>
+			<p class="list-song-artist">4:45</p>
+		</div>
+		<div class="tsfy-div4" id="tsfy-div4" onclick="document.getElementById('audio').src = 'TheFatRat/TheFatRat - Oblivion (feat. Lola Blanc).mp3'; document.getElementById('audio').play(); document.getElementById('song-name').innerHTML = 'Oblivion'; document.getElementById('song-name').style.cssText = 'left: 75px;'; document,getElementById('main-song-div-p2').innerHTML = 'Oblivion'; document.getElementById('pause').src = 'pause.svg';">
+			<img src="">
+			<p class="list-song-name">Oblivion</p>
+			<p class="list-song-artist">3:58</p>
+		</div>
+		<!--
+		<div class="tsfy-div5">
+			<img src="">
+			<p class="list-song-name"></p>
+			<p class="list-song-artist"></p>
+		</div>
+		-->
+		<p class="assfy">Albums & sets selected for you</p>
+		<a href="Anime Songs.html" style="text-decoration: none; color: #000;">
+		<div class="assfyl1">
+			<img src="449976.jpg" id="assfyl1-img">
+			<p class="albums-song-name" align="center">Anime Songs</p>
+			<p class="albums-song-artist" align="center">unknown</p>
+			<img src="">
+			<p class="albums-img-name"></p>
+			<p class="albums-img-artist"></p>
+		</div>
+		</a>
+		<a href="Demon Slayer.html" style="text-decoration: none; color: #000;">
+		<div class="assfyl2">
+			<img src="2243124edited.jpg" id="assfyl1-img">
+			<p class="albums-song-name" align="center">Demon Slayer</p>
+			<p class="albums-song-artist" align="center">unknown</p>
+			<img src="">
+			<p class="albums-img-name"></p>
+			<p class="albums-img-artist"></p>
+		</div>
+		</a>
+	</div>
+</body>
+</html>
